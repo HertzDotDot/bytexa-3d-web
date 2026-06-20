@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Bytexa | Enterprise Security & Network Infrastructure Solutions</title>
+    <meta name="title" content="Bytexa | Enterprise Security & Network Infrastructure Solutions">
+    <meta name="description" content="Bytexa architects scalable CCTV, Video Management Systems (VMS), and integrated access control networks for complex enterprise environments in Singapore & Globally.">
+    <meta name="keywords" content="System Integration, CCTV Singapore, Access Control Systems, VMS, Video Management Systems, IP Security, Tech Consultant, Network Architecture, Enterprise Security, B2B Security">
+    <meta name="author" content="Bytexa Solutions">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bytexa.com/">
+    <meta property="og:title" content="Bytexa | Enterprise Security & Network Architecture">
+    <meta property="og:description" content="Architecting enterprise-grade security and network solutions. Specializing in VMS, API integration, and integrated digital workflows.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bytexa.com/">
+    <meta property="twitter:title" content="Bytexa | Enterprise Security Integrations">
+    <meta property="twitter:description" content="Delivering robust, scalable infrastructure for mission-critical operations.">
+
+    <link rel="canonical" href="https://bytexa.com/" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style Sheet -->
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+    <!-- WebGL Canvas for 3D Cybernetic Network -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Navigation Header -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" id="nav-logo">
+                BYTEXA<span class="logo-accent">.NET</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" id="link-home">Home</a></li>
+                <li><a href="#about" class="nav-link" id="link-about">About</a></li>
+                <li><a href="#project" class="nav-link" id="link-project">Projects</a></li>
+                <li><a href="#contact" class="nav-link" id="link-contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home" id="mob-link-home">Home</a></li>
+            <li><a href="#about" id="mob-link-about">About</a></li>
+            <li><a href="#project" id="mob-link-project">Projects</a></li>
+            <li><a href="#contact" id="mob-link-contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Diagnostic control widget (WebGL settings) -->
+    <div class="diagnostic-panel" id="diagnostic-widget">
+        <div class="panel-header">
+            <span class="panel-dot"></span>
+            <span class="panel-title">SYSTEM MONITOR</span>
+        </div>
+        <div class="panel-body">
+            <div class="stat-row">
+                <span>FPS:</span>
+                <span class="stat-value" id="fps-counter">60</span>
+            </div>
+            <div class="stat-row">
+                <span>NODES:</span>
+                <span class="stat-value" id="nodes-counter">150</span>
+            </div>
+            <div class="theme-selector-title">SELECT DIAGNOSTIC VISUAL:</div>
+            <div class="theme-buttons">
+                <button class="theme-btn active" id="btn-theme-default" data-theme="default">DEFAULT</button>
+                <button class="theme-btn" id="btn-theme-audit" data-theme="audit">AUDIT</button>
+                <button class="theme-btn" id="btn-theme-alert" data-theme="alert">ALERT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Scrolling Scroll Container -->
+    <div id="scroll-container">
+        
+        <!-- Hero Section -->
+        <section id="home" class="scroll-section hero-section">
+            <div class="section-overlay-panel">
+                <div class="hero-content">
+                    <div class="cyber-badge" id="hero-badge">ENTERPRISE SOLUTIONS ARCHITECT</div>
+                    <h1 class="glitch-text" data-text="Architecting Security & Network Solutions">Architecting Security & Network Solutions</h1>
+                    <p class="subtitle">
+                        Partnering with organizations to design, deploy, and scale robust network architectures and advanced IP security systems that safeguard mission-critical operations.
+                    </p>
+                    <div class="cta-container">
+                        <a href="#project" class="cta-button" id="hero-cta">Explore Projects</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="scroll-section about-section">
+            <div class="section-overlay-panel glass-card">
+                <div class="container">
+                    <h2 class="section-title" id="title-about">About Me</h2>
+                    <div class="about-grid">
+                        <div class="about-visual">
+                            <!-- Code-based futuristic cyber grid visual -->
+                            <div class="cyber-grid-graphic">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#00f3ff" />
+                                            <stop offset="100%" stop-color="#bc13fe" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="url(#cyber-grad)" stroke-width="1.5" stroke-dasharray="5 5" />
+                                    <circle cx="100" cy="100" r="50" fill="none" stroke="#00f3ff" stroke-width="0.5" />
+                                    <path d="M20,100 L180,100 M100,20 L100,180" stroke="rgba(0, 243, 255, 0.2)" stroke-width="1" />
+                                    <circle cx="100" cy="100" r="5" fill="#bc13fe" />
+                                    <circle cx="60" cy="60" r="4" fill="#00f3ff" />
+                                    <circle cx="140" cy="140" r="4" fill="#00f3ff" />
+                                    <path d="M60,60 L100,100 L140,140" stroke="#00f3ff" stroke-width="1" stroke-dasharray="2 2" />
+                                    <circle cx="140" cy="60" r="3" fill="#ff003c" />
+                                    <line x1="140" y1="60" x2="100" y2="100" stroke="#ff003c" stroke-width="0.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <h3>Engineering Seamless Digital Integrations & Automated Workflows</h3>
+                            <p>Leveraging 14 years of expertise in systems architecture and enterprise integration, I specialize in unifying disparate platforms into cohesive, automated ecosystems. By bridging complex software environments, these solutions drive operational efficiency, reduce overhead, and ensure absolute reliability.</p>
+                            <p>Beyond advanced Video Management Systems (VMS), my core competencies encompass comprehensive network diagnostics, preventative maintenance, and the strategic optimization of sprawling infrastructural environments.</p>
+                            <p>Operating as a dedicated B2B specialist within the physical security sector, I collaborate with strategic partners to accelerate technology deployments and resolve complex integration challenges. Together, we deliver high-performance, scalable solutions that generate competitive advantages and mitigate operational risks for our clients.</p>
+                            <div class="skills">
+                                <span class="skill-tag" id="skill-cctv">CCTV</span>
+                                <span class="skill-tag" id="skill-acs">Access Control System</span>
+                                <span class="skill-tag" id="skill-vms">Video Management System</span>
+                                <span class="skill-tag" id="skill-integration">Integration</span>
+                                <span class="skill-tag" id="skill-api">API</span>
+                                <span class="skill-tag" id="skill-design">Systems Design</span>
+                                <span class="skill-tag" id="skill-facial">Facial Recognition</span>
+                                <span class="skill-tag" id="skill-analytics">Behavior Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section id="project" class="scroll-section project-section">
+            <div class="section-overlay-panel glass-card">
+                <div class="container">
+                    <h2 class="section-title" id="title-projects">Featured Work</h2>
+                    <div class="project-grid">
+                        
+                        <!-- Project 1 -->
+                        <div class="project-item" id="project-fsa">
+                            <div class="project-image-box">
+                                <svg viewBox="0 0 100 60" class="svg-project-graphic" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                                    <grid stroke="rgba(255,255,255,0.05)" stroke-width="0.5" />
+                                    <!-- Scan Lines / Tech Theme -->
+                                    <path d="M 0,20 L 100,20 M 0,40 L 100,40" stroke="rgba(0, 243, 255, 0.15)" stroke-width="0.5"/>
+                                    <!-- Facial scan overlay -->
+                                    <rect x="35" y="15" width="30" height="30" rx="3" fill="none" stroke="#00f3ff" stroke-width="1" />
+                                    <path d="M 33,15 L 37,15 M 35,13 L 35,17" stroke="#00f3ff" stroke-width="1"/>
+                                    <path d="M 63,15 L 67,15 M 65,13 L 65,17" stroke="#00f3ff" stroke-width="1"/>
+                                    <path d="M 33,45 L 37,45 M 35,43 L 35,47" stroke="#00f3ff" stroke-width="1"/>
+                                    <path d="M 63,45 L 67,45 M 65,43 L 65,47" stroke="#00f3ff" stroke-width="1"/>
+                                    <circle cx="50" cy="27" r="5" fill="none" stroke="#bc13fe" stroke-width="1" />
+                                    <path d="M 42,38 C 45,43 55,43 58,38" fill="none" stroke="#00f3ff" stroke-width="1" />
+                                    <!-- Scan Line Animation Indicator -->
+                                    <line x1="30" y1="20" x2="70" y2="20" stroke="#00f3ff" stroke-width="1" opacity="0.8">
+                                        <animate attributeName="y1" values="16;44;16" dur="3s" repeatCount="indefinite" />
+                                        <animate attributeName="y2" values="16;44;16" dur="3s" repeatCount="indefinite" />
+                                    </line>
+                                    <text x="5" y="10" fill="#00f3ff" font-family="monospace" font-size="4">FACIAL AUTH [ACTIVE]</text>
+                                </svg>
+                            </div>
+                            <div class="project-content">
+                                <h4>Fast & Secure Access (FSA) - HDB</h4>
+                                <p>HDB SmartLock for Fast & Secure Access (FSA) is an access control solution designed to protect key infrastructure within Housing & Development Board (HDB) Estates, using integrated facial authentication to securely grant contractors access to HDB Pump rooms, Switch Rooms and Rooftop Access.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">CCTV</span>
+                                    <span class="tech-tag">ACS</span>
+                                    <span class="tech-tag">Integration</span>
+                                    <span class="tech-tag">M2M LTE</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-item" id="project-logistic">
+                            <div class="project-image-box">
+                                <svg viewBox="0 0 100 60" class="svg-project-graphic" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                                    <!-- Warehouses/boxes graphic -->
+                                    <path d="M 10,45 L 30,30 L 50,45 L 30,55 Z" fill="none" stroke="rgba(188, 19, 254, 0.4)" stroke-width="1" />
+                                    <path d="M 50,45 L 70,30 L 90,45 L 70,55 Z" fill="none" stroke="rgba(188, 19, 254, 0.4)" stroke-width="1" />
+                                    <path d="M 30,30 L 30,10 M 70,30 L 70,10" stroke="rgba(0, 243, 255, 0.3)" stroke-width="1" />
+                                    <!-- Cloud nodes connecting -->
+                                    <circle cx="50" cy="15" r="8" fill="none" stroke="#00f3ff" stroke-width="1" />
+                                    <line x1="30" y1="30" x2="50" y2="15" stroke="#00f3ff" stroke-width="0.8" />
+                                    <line x1="70" y1="30" x2="50" y2="15" stroke="#00f3ff" stroke-width="0.8" />
+                                    <circle cx="30" cy="30" r="3" fill="#bc13fe" />
+                                    <circle cx="70" cy="30" r="3" fill="#bc13fe" />
+                                    <circle cx="50" cy="15" r="3" fill="#00f3ff" />
+                                    <text x="5" y="10" fill="#bc13fe" font-family="monospace" font-size="4">CLOUD MONITOR: 300+ NODES</text>
+                                </svg>
+                            </div>
+                            <div class="project-content">
+                                <h4>e-Commerce Logistic Warehouse (Singapore)</h4>
+                                <p>A centralized cloud-based system managing over 300 cameras for an e-Commerce logistic warehouse, delivering real-time monitoring, streamlined control, and scalable security across multiple sites to ensure efficient and reliable surveillance operations.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">CCTV</span>
+                                    <span class="tech-tag">Integration</span>
+                                    <span class="tech-tag">Cloud Server</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-item" id="project-swiss">
+                            <div class="project-image-box">
+                                <svg viewBox="0 0 100 60" class="svg-project-graphic" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                                    <!-- Luxury Swiss clock layout -->
+                                    <circle cx="50" cy="30" r="20" fill="none" stroke="#00f3ff" stroke-width="1.2" />
+                                    <line x1="50" y1="30" x2="50" y2="15" stroke="#00f3ff" stroke-width="1.5" />
+                                    <line x1="50" y1="30" x2="62" y2="30" stroke="#bc13fe" stroke-width="1.5" />
+                                    <!-- Laser alarm lines crossing -->
+                                    <line x1="10" y1="10" x2="90" y2="50" stroke="#ff003c" stroke-width="0.8" stroke-dasharray="2 2" />
+                                    <line x1="10" y1="50" x2="90" y2="10" stroke="#ff003c" stroke-width="0.8" stroke-dasharray="2 2" />
+                                    <text x="5" y="10" fill="#ff003c" font-family="monospace" font-size="4">SECURE LOCKDOWN: ACTIVE</text>
+                                </svg>
+                            </div>
+                            <div class="project-content">
+                                <h4>Ultra Luxury Swiss Watch Boutique</h4>
+                                <p>A comprehensive security solution for an ultra-luxury Swiss watch boutique, featuring high-performance iPRO cameras integrated with the Milestone video management system, HID card access for secure entry control, and a Paradox alarm system for advanced intrusion detection.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">CCTV</span>
+                                    <span class="tech-tag">ACS</span>
+                                    <span class="tech-tag">IDS</span>
+                                    <span class="tech-tag">Milestone</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="project-item" id="project-hq">
+                            <div class="project-image-box">
+                                <svg viewBox="0 0 100 60" class="svg-project-graphic" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                                    <!-- Building wireframe -->
+                                    <path d="M 20,50 L 20,20 L 40,10 L 80,10 L 80,50 Z" fill="none" stroke="rgba(0, 243, 255, 0.3)" stroke-width="1" />
+                                    <path d="M 20,30 L 80,30 M 20,40 L 80,40 M 40,10 L 40,50 M 60,10 L 60,50" stroke="rgba(0, 243, 255, 0.15)" stroke-width="0.5" />
+                                    <!-- Access scan wave -->
+                                    <path d="M 10,20 A 15,15 0 0,1 10,40" fill="none" stroke="#bc13fe" stroke-width="1" stroke-dasharray="1 1" />
+                                    <path d="M 5,15 A 25,25 0 0,1 5,45" fill="none" stroke="#00f3ff" stroke-width="1" stroke-dasharray="2 2" />
+                                    <text x="5" y="10" fill="#00f3ff" font-family="monospace" font-size="4">HQ INTEGRATION: ON</text>
+                                </svg>
+                            </div>
+                            <div class="project-content">
+                                <h4>Real Estate HQ Office</h4>
+                                <p>A unified management system deployed at the real estate headquarters, integrating facial recognition access control with comprehensive surveillance of main and emergency entry and exit points.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">ACS</span>
+                                    <span class="tech-tag">Facial Recognition</span>
+                                    <span class="tech-tag">CCTV</span>
+                                    <span class="tech-tag">Unified Platform</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="project-item" id="project-aerospace">
+                            <div class="project-image-box">
+                                <svg viewBox="0 0 100 60" class="svg-project-graphic" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                                    <!-- Aerospace Jet/Aircraft mesh wireframe -->
+                                    <path d="M 50,15 L 20,45 L 45,40 L 50,52 L 55,40 L 80,45 Z" fill="none" stroke="#bc13fe" stroke-width="1.2" />
+                                    <line x1="50" y1="15" x2="50" y2="52" stroke="#00f3ff" stroke-width="0.8" />
+                                    <line x1="20" y1="45" x2="80" y2="45" stroke="#00f3ff" stroke-width="0.8" />
+                                    <!-- Camera crosshairs -->
+                                    <circle cx="50" cy="35" r="4" fill="none" stroke="#ff003c" stroke-width="0.8" />
+                                    <text x="5" y="10" fill="#bc13fe" font-family="monospace" font-size="4">AEROSPA: DECADE ARCHIVE</text>
+                                </svg>
+                            </div>
+                            <div class="project-content">
+                                <h4>Aerospace Manufacturer Projects</h4>
+                                <p>Over the past 10 years, I have been involved in three major aerospace manufacturer projects across companies based in France, the United States, and Singapore. Each project utilized a diverse range of products—including CCTV systems from Hikvision, Axis, Bosch, and Hanwha; access control systems from Deister and EntryPass; alarm systems by Paradox; and platforms such as NxWitness and Synology.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">CCTV</span>
+                                    <span class="tech-tag">ACS</span>
+                                    <span class="tech-tag">Alarm</span>
+                                    <span class="tech-tag">Server</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="project-item" id="project-atm">
+                            <div class="project-image-box">
+                                <svg viewBox="0 0 100 60" class="svg-project-graphic" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100%" height="100%" fill="#0a0a0a"/>
+                                    <!-- Vault doors dial -->
+                                    <circle cx="50" cy="30" r="18" fill="none" stroke="#00f3ff" stroke-width="2" />
+                                    <circle cx="50" cy="30" r="14" fill="none" stroke="rgba(0, 243, 255, 0.4)" stroke-width="1" stroke-dasharray="4 4" />
+                                    <circle cx="50" cy="30" r="6" fill="#0a0a0a" stroke="#bc13fe" stroke-width="1.5" />
+                                    <!-- Locking bolts radiating -->
+                                    <path d="M 50,5 L 50,12 M 50,48 L 50,55 M 25,30 L 32,30 M 68,30 L 75,30" stroke="#00f3ff" stroke-width="1.5" />
+                                    <text x="5" y="10" fill="#00f3ff" font-family="monospace" font-size="4">HIGH-SECURITY INTERLOCK</text>
+                                </svg>
+                            </div>
+                            <div class="project-content">
+                                <h4>ATM Cash Management and Security</h4>
+                                <p>CCTV and access control systems for a U.S.-based client’s ATM cash sorting warehouse in Singapore, a high-security environment with strict requirements for response time and uptime. The facility is equipped with over 300 cameras, all recording separately on multiple recorders with independent power sources for redundancy.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">CCTV</span>
+                                    <span class="tech-tag">ACS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="scroll-section contact-section">
+            <div class="section-overlay-panel glass-card">
+                <div class="container">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h2 class="section-title text-left" id="title-contact">Let's Build a Smarter Solution</h2>
+                            <p>Ready to bring your security vision to life? As a solution design partner, I specialize in transforming complex ideas into integrated systems. Let's begin a conversation about your project's unique requirements and how we can achieve your goals through strategic design and seamless integration.</p>
+                            <div class="contact-details">
+                                <div class="detail-item">
+                                    <span class="detail-icon">🌐</span>
+                                    <span>Singapore & Globally</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-icon">✉️</span>
+                                    <span>info@bytexa.net</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form-container">
+                            <form class="contact-form" id="bytexa-contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="form-name">Name</label>
+                                        <input type="text" id="form-name" name="name" placeholder="Your full name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="form-email">Email</label>
+                                        <input type="email" id="form-email" name="email" placeholder="name@example.com" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-subject">Subject</label>
+                                    <input type="text" id="form-subject" name="subject" placeholder="Subject of your inquiry" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-message">Message</label>
+                                    <textarea id="form-message" name="message" rows="6" placeholder="Please share details about your inquiry or project." required></textarea>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 20px; display: flex; justify-content: center;">
+                                    <div class="g-recaptcha" data-sitekey="6Lc76CktAAAAAHB-Qv0PL26WHUP_oXPG4fhclP_1" data-theme="dark"></div>
+                                </div>
+                                <button type="submit" class="submit-btn" id="btn-submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <p>&copy; 2026 Bytexa. All rights reserved.</p>
+                    </div>
+                    <div class="footer-right">
+                        <a href="#about" class="footer-link">About</a>
+                        <a href="#project" class="footer-link">Projects</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JS Libraries (ThreeJS, GSAP, EmailJS) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <!-- Core Application Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>
