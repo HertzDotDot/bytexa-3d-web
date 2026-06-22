@@ -235,103 +235,7 @@ nav.scrolled {
     text-shadow: 0 0 10px var(--primary-glow);
 }
 
-/* Diagnostic / Control HUD widget */
-.diagnostic-panel {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 99;
-    width: 280px;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 1.25rem;
-    font-family: 'Courier New', Courier, monospace;
-    box-shadow: var(--glass-shadow);
-    transition: var(--transition-normal);
-}
 
-.diagnostic-panel:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.15), var(--glass-shadow);
-}
-
-.panel-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 0.5rem;
-}
-
-.panel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    box-shadow: 0 0 10px var(--primary-color);
-    animation: beacon 1.5s infinite;
-}
-
-.panel-title {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-}
-
-.stat-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-}
-
-.stat-value {
-    color: var(--text-primary);
-    font-weight: bold;
-}
-
-.theme-selector-title {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin: 1rem 0 0.5rem;
-    letter-spacing: 0.5px;
-}
-
-.theme-buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-}
-
-.theme-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-secondary);
-    font-size: 0.7rem;
-    padding: 0.5rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: var(--transition-fast);
-}
-
-.theme-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-}
-
-.theme-btn.active {
-    background: rgba(0, 243, 255, 0.1);
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    text-shadow: 0 0 5px var(--primary-glow);
-}
 
 /* Scroll Container Structure */
 #scroll-container {
@@ -789,12 +693,7 @@ nav.scrolled {
     color: var(--primary-color);
 }
 
-/* Animations */
-@keyframes beacon {
-    0% { transform: scale(0.9); opacity: 0.8; }
-    50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 15px var(--primary-color); }
-    100% { transform: scale(0.9); opacity: 0.8; }
-}
+
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
@@ -855,13 +754,7 @@ nav.scrolled {
     .section-title {
         font-size: 2.4rem;
     }
-    
-    .diagnostic-panel {
-        width: 90%;
-        left: 5%;
-        bottom: 1rem;
-        right: auto;
-    }
+
 }
 
 @media (max-width: 480px) {

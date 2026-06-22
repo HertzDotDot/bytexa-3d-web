@@ -186,38 +186,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let packetsGroup, centerCore;
     
     let isMobile = window.innerWidth < 768;
-    let particleCount = isMobile ? 60 : 160;
+    let particleCount = isMobile ? 35 : 50;
     let connectionDistance = isMobile ? 18 : 28;
     
     let nodes = [];
     const colors = {
-        default: {
-            node: '#00f3ff',
-            line: '#bc13fe',
-            core: '#8b5cf6',
-            packet: '#00f3ff'
-        },
-        audit: {
-            node: '#eab308',
-            line: '#ffffff',
-            core: '#f59e0b',
-            packet: '#facc15'
-        },
-        alert: {
-            node: '#ff003c',
-            line: '#ec4899',
-            core: '#ff003c',
-            packet: '#ff003c'
-        }
+        node: '#00f3ff',
+        line: '#bc13fe',
+        core: '#8b5cf6',
+        packet: '#00f3ff'
     };
     
-    let currentTheme = 'default';
-
     // Global variables for tracking theme states
-    let globalNodeColor = new THREE.Color(colors.default.node);
-    let globalLineColor = new THREE.Color(colors.default.line);
-    let globalCoreColor = new THREE.Color(colors.default.core);
-    let globalPacketColor = new THREE.Color(colors.default.packet);
+    let globalNodeColor = new THREE.Color(colors.node);
+    let globalLineColor = new THREE.Color(colors.line);
+    let globalCoreColor = new THREE.Color(colors.core);
+    let globalPacketColor = new THREE.Color(colors.packet);
     let simulationSpeed = 1.0;
 
     // Mouse Tracking
@@ -226,13 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let raycaster = new THREE.Raycaster();
     let planeZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
 
-    // Dynamic FPS & Diagnostics HUD
-    const fpsCounter = document.getElementById('fps-counter');
-    const nodesCounter = document.getElementById('nodes-counter');
-    let lastTime = performance.now();
-    let frameCount = 0;
-    
-    if (nodesCounter) nodesCounter.textContent = particleCount;
+
 
     // Canvas Point Texture Generator
     function createCircleTexture(colorStr) {
@@ -370,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0.8
         });
 
-        let maxPackets = isMobile ? 12 : 35;
+        let maxPackets = isMobile ? 8 : 15;
         for (let i = 0; i < maxPackets; i++) {
             const mesh = new THREE.Mesh(packetGeo, packetMat);
             packetsGroup.add(mesh);
@@ -436,14 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function animateWebGL(time) {
         requestAnimationFrame(animateWebGL);
         
-        // Calculate FPS Diagnostics
-        frameCount++;
-        if (time > lastTime + 1000) {
-            let fps = Math.round((frameCount * 1000) / (time - lastTime));
-            if (fpsCounter) fpsCounter.textContent = fps;
-            frameCount = 0;
-            lastTime = time;
-        }
+
 
         const t = time * 0.001;
 
@@ -695,87 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ================================================================
-    // HUD Control Panel Interaction Theme Selector
-    // ================================================================
-    const themeButtons = document.querySelectorAll('.theme-btn');
 
-    themeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            themeButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const selectedTheme = btn.getAttribute('data-theme');
-            switchTheme(selectedTheme);
-        });
-    });
-
-    function switchTheme(themeKey) {
-        if (!colors[themeKey]) return;
-        currentTheme = themeKey;
-
-        const targetColors = colors[themeKey];
-        
-        // Target color objects
-        const nodeCol = new THREE.Color(targetColors.node);
-        const lineCol = new THREE.Color(targetColors.line);
-        const coreCol = new THREE.Color(targetColors.core);
-        const packCol = new THREE.Color(targetColors.packet);
-
-        let transitionSpeedValue = 1.0;
-        if (themeKey === 'audit') transitionSpeedValue = 0.45;
-        if (themeKey === 'alert') transitionSpeedValue = 2.4;
-
-        // Smooth tween transition of colors and simulation speed using GSAP
-        if (typeof gsap !== 'undefined') {
-            gsap.to(globalNodeColor, { r: nodeCol.r, g: nodeCol.g, b: nodeCol.b, duration: 1.2 });
-            gsap.to(globalLineColor, { r: lineCol.r, g: lineCol.g, b: lineCol.b, duration: 1.2 });
-            gsap.to(globalCoreColor, { r: coreCol.r, g: coreCol.g, b: coreCol.b, duration: 1.2 });
-            gsap.to(globalPacketColor, { r: packCol.r, g: packCol.g, b: packCol.b, duration: 1.2 });
-            gsap.to(window, {
-                simulationSpeed: transitionSpeedValue,
-                duration: 1.0,
-                onUpdate: () => {
-                    simulationSpeed = window.simulationSpeed || 1.0;
-                    
-                    // Update packets speed
-                    packets.forEach(p => {
-                        p.speed = (0.008 + Math.random() * 0.012) * simulationSpeed;
-                    });
-                }
-            });
-            
-            // Re-render particle texture smoothly
-            setTimeout(() => {
-                nodesMaterial.map = createCircleTexture(targetColors.node);
-                nodesMaterial.needsUpdate = true;
-            }, 100);
-        } else {
-            // Direct instantaneous fallback
-            globalNodeColor.copy(nodeCol);
-            globalLineColor.copy(lineCol);
-            globalCoreColor.copy(coreCol);
-            globalPacketColor.copy(packCol);
-            simulationSpeed = transitionSpeedValue;
-            nodesMaterial.map = createCircleTexture(targetColors.node);
-            nodesMaterial.needsUpdate = true;
-        }
-
-        // Apply updated colors to materials
-        nodesMaterial.color = globalNodeColor;
-        connectionsMaterial.color = globalLineColor;
-        centerCore.material.color = globalCoreColor;
-        
-        // Update torus sub-rings inside core
-        centerCore.children.forEach(child => {
-            if (child.material) child.material.color = globalNodeColor;
-        });
-
-        // Update all data packet materials
-        packets.forEach(p => {
-            p.mesh.material.color = globalPacketColor;
-        });
-    }
 
     // Startup System
     initWebGL();
