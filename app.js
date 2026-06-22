@@ -186,8 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let packetsGroup, centerCore;
     
     let isMobile = window.innerWidth < 768;
-    let particleCount = isMobile ? 35 : 50;
-    let connectionDistance = isMobile ? 18 : 28;
+    let particleCount = isMobile ? 15 : 25;
+    let connectionDistance = isMobile ? 22 : 32;
     
     let nodes = [];
     const colors = {
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0.8
         });
 
-        let maxPackets = isMobile ? 8 : 15;
+        let maxPackets = isMobile ? 4 : 8;
         for (let i = 0; i < maxPackets; i++) {
             const mesh = new THREE.Mesh(packetGeo, packetMat);
             packetsGroup.add(mesh);
