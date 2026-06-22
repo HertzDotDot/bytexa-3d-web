@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let packetsGroup, centerCore;
     
     let isMobile = window.innerWidth < 768;
-    let particleCount = isMobile ? 15 : 25;
+    let particleCount = isMobile ? 45 : 80;
     let connectionDistance = isMobile ? 22 : 32;
     
     let nodes = [];
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0.8
         });
 
-        let maxPackets = isMobile ? 4 : 8;
+        let maxPackets = isMobile ? 8 : 16;
         for (let i = 0; i < maxPackets; i++) {
             const mesh = new THREE.Mesh(packetGeo, packetMat);
             packetsGroup.add(mesh);
@@ -396,12 +396,43 @@ document.addEventListener('DOMContentLoaded', () => {
     function recalculateConnections() {
         linksList = [];
         const limitDistSq = connectionDistance * connectionDistance;
+        const maxConnectionsPerNode = 3; // Limit connections per node to avoid dense overlapping lines
+        
+        const connectionCounts = new Array(particleCount).fill(0);
         
         for (let i = 0; i < particleCount; i++) {
-            for (let j = i + 1; j < particleCount; j++) {
+            let candidates = [];
+            for (let j = 0; j < particleCount; j++) {
+                if (i === j) continue;
                 let dSq = distanceSq(nodes[i], nodes[j]);
                 if (dSq < limitDistSq) {
-                    linksList.push(i, j);
+                    candidates.push({ index: j, distSq: dSq });
+                }
+            }
+            
+            // Sort neighbors by distance so we connect to the closest ones first
+            candidates.sort((a, b) => a.distSq - b.distSq);
+            
+            for (let c = 0; c < candidates.length; c++) {
+                if (connectionCounts[i] >= maxConnectionsPerNode) break;
+                
+                let targetIdx = candidates[c].index;
+                if (connectionCounts[targetIdx] >= maxConnectionsPerNode) continue;
+                
+                // Avoid duplicating connection lines
+                let lineExists = false;
+                for (let l = 0; l < linksList.length; l += 2) {
+                    if ((linksList[l] === i && linksList[l+1] === targetIdx) || 
+                        (linksList[l] === targetIdx && linksList[l+1] === i)) {
+                        lineExists = true;
+                        break;
+                    }
+                }
+                
+                if (!lineExists) {
+                    linksList.push(i, targetIdx);
+                    connectionCounts[i]++;
+                    connectionCounts[targetIdx]++;
                 }
             }
         }
